@@ -5,13 +5,14 @@
 - Then make sure that `protoc` is accessible from your $PATH
 
 ### Get the source code
-- `git clone git@github.com:dfuse-io/example-graphql-grpc.git`
+- `git clone https://github.com/dfuse-io/example-graphql-grpc.git`
 - `git clone https://github.com/dfuse-io/graphql-over-grpc.git`
 
 ### Generates the graphql.pb.go
 - `protoc -I graphql-over-grpc graphql/graphql.proto --go_out=plugins=grpc:./example-graphql-grpc`
 
 ### Getting project dependencies
+- `cd example-graphql-grpc`
 - `go mod init main`
 - `go mod tidy` 
 
