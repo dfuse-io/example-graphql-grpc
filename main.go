@@ -22,7 +22,7 @@ func main() {
 	}
 
 	credential := oauth.NewOauthAccess(&oauth2.Token{AccessToken: token, TokenType: "Bearer"})
-	connection, err := grpc.Dial("kylin.eos.dfuse.io:443", grpc.WithPerRPCCredentials(credential), grpc.WithTransportCredentials(credentials.NewClientTLSFromCert(nil, "")))
+	connection, err := grpc.Dial("mainnet.eos.dfuse.io:443", grpc.WithPerRPCCredentials(credential), grpc.WithTransportCredentials(credentials.NewClientTLSFromCert(nil, "")))
 	graphqlClient := pbgraphql.NewGraphQLClient(connection)
 
 	q := `subscription  {
