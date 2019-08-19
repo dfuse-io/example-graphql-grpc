@@ -26,7 +26,7 @@ func main() {
 	graphqlClient := pbgraphql.NewGraphQLClient(connection)
 
 	q := `subscription  {
-		  searchTransactionsForward(query: "status:executed") {
+		  searchTransactionsForward(query: "action:transfer", limit:10) {
 			trace { matchingActions {receiver account name json }}}}`
 
 	executionClient, err := graphqlClient.Execute(context.Background(), &pbgraphql.Request{Query: q})
